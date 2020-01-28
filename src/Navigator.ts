@@ -1,5 +1,6 @@
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
+import { Wrapper } from './elements'
 
 const StackNavigator = createStackNavigator(
 	{
@@ -15,4 +16,4 @@ const StackNavigator = createStackNavigator(
 	},
 )
 
-export default createAppContainer(StackNavigator)
+export default Wrapper(createAppContainer(StackNavigator))

@@ -29,6 +29,7 @@ export interface IUser {
 	website: string
 	address: string
 	string: string
+	status: string
 	_links: {
 		self: ILink
 		edit: ILink

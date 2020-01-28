@@ -1,25 +1,30 @@
-import { observable } from 'mobx'
 import { Http } from 'services'
-import { IUser } from 'types/Http'
+import { IHttpResult } from 'src/types/Http'
+import { sortBy } from 'lodash'
+import moment from 'moment'
 
 export default class Users {
-	@observable _users?: IUser[] = []
-
 	private _http: Http
 
 	constructor(http: Http) {
 		this._http = http
 	}
 
-	fetchData = async (): Promise<any> => {
-		try {
-			const response = await this._http.getData()
-			const { code } = response._meta
-			if (code === 200) {
-				return response.result
-			}
-		} catch (error) {
-			return []
-		}
+	fetchData(): Promise<any> {
+		return this._http.getData().then((response: IHttpResult) => {
+			response.result?.map((user) => {
+				const age = `${moment().diff(user.dob, 'year', false)}`
+				user.dob = age
+				return user
+			})
+			const users = response.result?.reduce((prev: any, next) => {
+				const title = next.first_name[0].toUpperCase()
+				if (!prev[title]) prev[title] = { title, data: [next] }
+				else prev[title].data.push(next)
+				return prev
+			}, {})
+
+			return sortBy(Object.values(users), ['title'])
+		})
 	}
 }

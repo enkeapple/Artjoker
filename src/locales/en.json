@@ -13,7 +13,7 @@
     "genderFemale": "Female",
     "genderBoth": "Both",
 
-    "userAge": "years old",
+    "userAge": "{dob} years old",
 
     "modalQuestion": "Are you sure you want to invite user id = {id}?",
     "modalSuccess": "Invitation sent"

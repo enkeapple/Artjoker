@@ -33,7 +33,7 @@ class Localize {
 
 	translate(text: string, params: Record<string, any> = {}) {
 		if (this.dictionary && this.dictionary[this._locale] && this.dictionary[this._locale][text]) {
-			return Object.keys(params).reduce((acc: string, param) => {
+			return Object.keys(params).reduce((acc: string, param: string) => {
 				return replace(acc, new RegExp(`{${param}}`, 'g'), params[param])
 			}, this.dictionary[this._locale][text])
 		}

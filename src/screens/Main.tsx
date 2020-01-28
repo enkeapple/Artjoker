@@ -1,23 +1,30 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
-import { observable } from 'mobx'
+import { View, ViewStyle } from 'react-native'
 import { observer } from 'mobx-react'
-import { layout } from 'themes/styles'
-import { NavigationScreenProp, NavigationParams } from 'react-navigation'
+import { Filter, List, SafeAreaView } from 'elements'
 import Application from '../Application'
-import { IUser } from 'types/Http'
+import { observable, toJS } from 'mobx'
 
 @observer
-class Main extends Component<NavigationScreenProp<NavigationParams>> {
-	@observable users?: IUser[]
+class Main extends Component {
+	@observable users = []
 
-	async componentDidMount() {
-		this.users = await Application.instance.fetchData()
+	componentDidMount() {
+		Application.instance.fetchData().then((response) => (this.users = response))
 	}
 
 	render() {
-		return <View style={layout}></View>
+		return (
+			<View style={layout}>
+				<Filter />
+				<List users={toJS(this.users)} />
+			</View>
+		)
 	}
 }
 
-export default Main
+export default SafeAreaView(Main)
+
+const layout: ViewStyle = {
+	flex: 1,
+}

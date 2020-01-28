@@ -8,7 +8,6 @@
 			"models/*": ["models/*"],
 			"screens/*": ["screens/*"],
 			"services/*": ["services/*"],
-			"themes/*": ["themes/*"],
 			"types/*": ["types/*"]
 		},
 		"esModuleInterop": true,

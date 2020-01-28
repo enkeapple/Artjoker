@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./src",
+		"paths": {
+			"elements/*": ["elements/*"],
+			"screens/*": ["screens/*"],
+		},
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"jsx": "react-native",
+		"lib": ["es2018"],
+		"resolveJsonModule": true,
+		"importHelpers": true,
+		"module": "esNext",
+		"moduleResolution": "node",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"preserveSymlinks": true,
+		"strict": true,
+		"target": "es6",
+		"types": ["react", "react-native"]
+	},
+	"exclude": ["node_modules", "scripts"]
+}

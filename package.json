@@ -1,0 +1,33 @@
+{
+	"name": "artjoker",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "npx react-native start --reset-cache",
+		"android": "npx react-native run-android",
+		"ios": "npx react-native run-ios",
+		"android:apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ../",
+		"android:bundle": "cd android && ./gradlew clean && ./gradlew bundleRelease && cd ../",
+		"android:clean": "cd android && ./gradlew clean && cd ../",
+		"prettier": "prettier --write './src/**/*.{ts,tsx}'",
+		"watchman": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache verify && npm install && npm start -- --reset-cache",
+		"xcode": "xed -b ios"
+	},
+	"dependencies": {
+		"react": "16.12.0",
+		"react-native": "0.61.5"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.8.3",
+		"@babel/plugin-proposal-decorators": "^7.8.3",
+		"@babel/runtime": "^7.8.3",
+		"@types/react-native": "^0.61.5",
+		"@vovkasm/tslint-config": "^2.0.1",
+		"babel-plugin-module-resolver": "^4.0.0",
+		"metro-react-native-babel-preset": "^0.58.0",
+		"prettier": "^1.19.1",
+		"tslint": "^6.0.0",
+		"tslint-plugin-prettier": "^2.1.0",
+		"typescript": "^3.7.5"
+	}
+}

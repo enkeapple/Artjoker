@@ -1,14 +1,13 @@
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
-import { Wrapper } from 'elements'
-import { Main } from 'screens'
 
 const StackNavigator = createStackNavigator(
 	{
-		MAIN: { screen: Main },
+		MAIN: { screen: require('screens/Main').default },
 	},
 	{
 		headerMode: 'screen',
+		initialRouteName: 'MAIN',
 		defaultNavigationOptions: {
 			gestureEnabled: false,
 			headerShown: false,
@@ -16,4 +15,4 @@ const StackNavigator = createStackNavigator(
 	},
 )
 
-export default Wrapper(createAppContainer(StackNavigator))
+export default createAppContainer(StackNavigator)

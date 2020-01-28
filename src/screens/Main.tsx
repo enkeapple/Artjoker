@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
-import { View, ViewStyle } from 'react-native'
-import { SafeAreaView } from 'elements'
+import { View } from 'react-native'
+import { observable } from 'mobx'
+import { observer } from 'mobx-react'
+import { layout } from 'themes/styles'
+import { NavigationScreenProp, NavigationParams } from 'react-navigation'
+import Application from '../Application'
+import { IUser } from 'types/Http'
 
-class Main extends Component {
+@observer
+class Main extends Component<NavigationScreenProp<NavigationParams>> {
+	@observable users?: IUser[]
+
+	async componentDidMount() {
+		this.users = await Application.instance.fetchData()
+	}
+
 	render() {
 		return <View style={layout}></View>
 	}
 }
 
-export default SafeAreaView(Main)
-
-const layout: ViewStyle = {
-	flex: 1,
-}
+export default Main

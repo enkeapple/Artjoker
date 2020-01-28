@@ -1,13 +1,15 @@
 {
 	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
-		"baseUrl": "./src",
+		"baseUrl": "./",
 		"paths": {
 			"elements/*": ["elements/*"],
 			"locales/*": ["locales/*"],
 			"models/*": ["models/*"],
 			"screens/*": ["screens/*"],
-			"themes/*": ["themes/*"]
+			"services/*": ["services/*"],
+			"themes/*": ["themes/*"],
+			"types/*": ["types/*"]
 		},
 		"esModuleInterop": true,
 		"experimentalDecorators": true,

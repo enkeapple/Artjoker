@@ -1,1 +1,1 @@
-export { default as Localize } from './Localize'
+export { default as Users } from './Users'

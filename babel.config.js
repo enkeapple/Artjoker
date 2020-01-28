@@ -7,7 +7,9 @@ module.exports = {
 				root: ['./src/'],
 				alias: {
 					elements: './src/elements',
+					models: './src/models',
 					screens: './src/screens',
+					themes: './src/themes',
 				},
 			},
 		],

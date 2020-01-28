@@ -14,14 +14,25 @@
 		"xcode": "xed -b ios"
 	},
 	"dependencies": {
+		"@react-native-community/masked-view": "^0.1.6",
+		"axios": "^0.19.2",
+		"mobx": "^5.15.3",
+		"mobx-react": "^6.1.4",
 		"react": "16.12.0",
-		"react-native": "0.61.5"
+		"react-native": "0.61.5",
+		"react-native-gesture-handler": "^1.5.3",
+		"react-native-reanimated": "^1.7.0",
+		"react-native-safe-area-context": "^0.6.2",
+		"react-native-screens": "^2.0.0-alpha.31",
+		"react-navigation": "^4.0.10",
+		"react-navigation-stack": "^2.0.16"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.3",
 		"@babel/plugin-proposal-decorators": "^7.8.3",
 		"@babel/runtime": "^7.8.3",
 		"@types/react-native": "^0.61.5",
+		"@types/react-navigation": "^3.4.0",
 		"@vovkasm/tslint-config": "^2.0.1",
 		"babel-plugin-module-resolver": "^4.0.0",
 		"metro-react-native-babel-preset": "^0.58.0",

@@ -10,27 +10,35 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+import com.swmansion.rnscreens.RNScreensPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import org.reactnative.maskedview.RNCMaskedViewPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
-	private final ReactNativeHost mReactNativeHost =
-			new ReactNativeHost(this) {
-				@Override
-				public boolean getUseDeveloperSupport() {
-					return BuildConfig.DEBUG;
-				}
+	private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+		@Override
+		public boolean getUseDeveloperSupport() {
+			return BuildConfig.DEBUG;
+		}
 
-				@Override
-				protected List<ReactPackage> getPackages() {
-					@SuppressWarnings("UnnecessaryLocalVariable")
-					List<ReactPackage> packages = new PackageList(this).getPackages();
-					return packages;
-				}
+		@Override
+		protected List<ReactPackage> getPackages() {
+			@SuppressWarnings("UnnecessaryLocalVariable")
+			List<ReactPackage> packages = new PackageList(this).getPackages();
+			packages.add(new RNGestureHandlerPackage());
+			packages.add(new RNScreensPackage());
+			packages.add(new SafeAreaContextPackage());
+			packages.add(new RNCMaskedViewPackage());
+			return packages;
+		}
 
-				@Override
-				protected String getJSMainModuleName() {
-					return "index";
-				}
-			};
+		@Override
+		protected String getJSMainModuleName() {
+			return "index";
+		}
+	};
 
 	@Override
 	public ReactNativeHost getReactNativeHost() {

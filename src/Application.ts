@@ -1,6 +1,7 @@
 import { AppRegistry } from 'react-native'
 import { name as appName } from '../app.json'
 import AppContainer from './Navigator'
+import { Localize } from './models'
 
 export default class Application {
 	private static _instance: Application
@@ -13,6 +14,7 @@ export default class Application {
 	}
 
 	bootstrap = () => {
+		Localize.setLocale()
 		AppRegistry.registerComponent(appName, () => AppContainer)
 	}
 }

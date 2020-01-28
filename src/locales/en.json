@@ -1,0 +1,20 @@
+{
+    "btnReset": "Reset",
+    "btnYes": "Yes",
+    "btnNo": "No",
+    "btnOK": "OK",
+
+    "inputName": "Name",
+    "inputGenger": "Gender",
+    "inputAgeFrom": "from",
+    "inputAgeTo": "to",
+
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "genderBoth": "Both",
+
+    "userAge": "years old",
+
+    "modalQuestion": "Are you sure you want to invite user id = {id}?",
+    "modalSuccess": "Invitation sent"
+}

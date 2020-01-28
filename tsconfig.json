@@ -4,6 +4,7 @@
 		"baseUrl": "./src",
 		"paths": {
 			"elements/*": ["elements/*"],
+			"locales/*": ["locales/*"],
 			"models/*": ["models/*"],
 			"screens/*": ["screens/*"],
 			"themes/*": ["themes/*"]

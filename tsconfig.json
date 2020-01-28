@@ -4,7 +4,9 @@
 		"baseUrl": "./src",
 		"paths": {
 			"elements/*": ["elements/*"],
+			"models/*": ["models/*"],
 			"screens/*": ["screens/*"],
+			"themes/*": ["themes/*"]
 		},
 		"esModuleInterop": true,
 		"experimentalDecorators": true,

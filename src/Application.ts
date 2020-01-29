@@ -1,14 +1,10 @@
 import { AppRegistry } from 'react-native'
 import { name as appName } from '../app.json'
-import { Localize, Http } from './services'
-import { Users } from './models'
+import { Localize } from './services'
 import StackNavigator from './Navigator'
 
 export default class Application {
 	private static _instance: Application
-
-	private _http: Http = new Http('https://gorest.co.in/public-api/users')
-	private _model = new Users(this.http)
 
 	static get instance(): Application {
 		if (!Application._instance) {
@@ -17,19 +13,7 @@ export default class Application {
 		return Application._instance
 	}
 
-	get http(): Http {
-		return this._http
-	}
-
-	get model(): Users {
-		return this._model
-	}
-
-	fetchData() {
-		return this.model.fetchData()
-	}
-
-	bootstrap = (): void => {
+	bootstrap(): void {
 		Localize.setLocale()
 		AppRegistry.registerComponent(appName, StackNavigator)
 	}

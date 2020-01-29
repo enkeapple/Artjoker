@@ -10,14 +10,20 @@ interface IProps {
 	gender: string
 	dob: string
 	status: string
+	onPress: (index: number) => void
 }
 
 export default class User extends Component<IProps> {
+	handlePress = () => {
+		const { id } = this.props
+		this.props.onPress(id)
+	}
+
 	render() {
 		const { id, first_name, last_name, gender, dob, status } = this.props
 		const disabled = status === 'inactive'
 		return (
-			<Ripple style={button} {...{ disabled }}>
+			<Ripple style={button} {...{ disabled }} onPress={this.handlePress}>
 				<View style={layout}>
 					<Text style={[key, name, disabled && inactive]}>#{id}</Text>
 					<Text style={[label, name, disabled && inactive]}>

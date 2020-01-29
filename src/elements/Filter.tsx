@@ -43,7 +43,6 @@ export default class Filter extends Component {
 	}
 
 	render() {
-		console.log( this.name )
 		return (
 			<View style={layout}>
 				<TextField
@@ -84,7 +83,7 @@ export default class Filter extends Component {
 }
 
 const layout: ViewStyle = {
-	flex: 1,
+	height: 280,
 	paddingHorizontal: 15,
 	paddingBottom: 7.5,
 	justifyContent: 'space-between',

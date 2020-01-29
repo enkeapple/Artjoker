@@ -3,8 +3,8 @@ import { Platform, StatusBar, ComponentProvider } from 'react-native'
 import { NavigationContainer } from 'react-navigation'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
-const backgroundColor = Platform.OS === 'ios' ? 'transparent' : '#fff'
-const barStyle = 'dark-content'
+const backgroundColor = Platform.OS === 'ios' ? 'transparent' : '#000'
+const barStyle = Platform.OS === 'ios' ? 'dark-content' : 'light-content'
 
 export default (StackNavigator: NavigationContainer): ComponentProvider => {
 	return () => {

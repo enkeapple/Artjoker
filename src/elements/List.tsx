@@ -1,49 +1,70 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { ViewStyle, SectionList, View } from 'react-native'
-import { User, Title } from 'elements'
-import { IUser } from 'types/Http'
+import { User, Title, Question, Invite } from 'elements'
+import { IUser, IData, ISection } from 'types/Http'
+import { observable } from 'mobx'
+import { observer } from 'mobx-react'
 
 interface IProps {
-	users: ISection[]
+	sections: ISection[]
+	onDate: (index: number) => void
 }
 
-interface ISection {
-	title: string
-	data: IUser[]
-}
+@observer
+export default class List extends Component<IProps> {
+	@observable visible: boolean = false
+	@observable question: number | null = null
+	@observable invite: number | null = null
 
-interface IData {
-	item: IUser
-	index: number
-}
+	keyExtractor = (_item: IUser, index: number) => index.toString()
 
-export default (props: IProps) => {
-	const { users } = props
-
-	const _keyExtractor = (_item: IUser, index: number) => index.toString()
-
-	const _renderItem = ({ item, index }: IData) => {
+	renderItem = ({ item, index }: IData) => {
 		const { id, first_name, last_name, gender, dob, status } = item
-		return <User key={index} {...{ id, first_name, last_name, gender, dob, status }} />
+		return (
+			<User key={index} {...{ id, first_name, last_name, gender, dob, status }} onPress={this.handleQuestion} />
+		)
 	}
 
-	const _renderSectionHeader = ({ section }: any) => {
-		const { index, title } = section
-		return <Title key={index} {...{ title }} />
+	renderSectionHeader = ({ section }: any) => {
+		const { title, data } = section
+		return data.length ? <Title {...{ title }} /> : null
 	}
 
-	return (
-		<View style={layout}>
-			<SectionList
-				sections={users}
-				keyExtractor={_keyExtractor}
-				renderItem={_renderItem}
-				renderSectionHeader={_renderSectionHeader}
-			/>
-		</View>
-	)
+	handleModal = () => {
+		this.visible = !this.visible
+	}
+
+	handleQuestion = (index: number | null) => {
+		this.question = index
+	}
+
+	handleInvite = (index: number | null) => {
+		this.invite = index
+	}
+
+	render() {
+		const { sections, onDate } = this.props
+		return (
+			<View style={layout}>
+				<SectionList
+					sections={sections}
+					initialNumToRender={10}
+					keyExtractor={this.keyExtractor}
+					renderItem={this.renderItem}
+					renderSectionHeader={this.renderSectionHeader}
+				/>
+				<Question
+					question={this.question}
+					onQuestion={this.handleQuestion}
+					onInvite={this.handleInvite}
+					onDate={onDate}
+				/>
+				<Invite invite={this.invite} onSuccess={this.handleInvite} />
+			</View>
+		)
+	}
 }
 
 const layout: ViewStyle = {
-	flex: 2,
+	flex: 1,
 }

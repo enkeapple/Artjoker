@@ -7,11 +7,15 @@ const StackNavigator = createStackNavigator(
 		MAIN: { screen: require('screens/Main').default },
 	},
 	{
-		headerMode: 'screen',
+		mode: 'modal',
 		initialRouteName: 'MAIN',
 		defaultNavigationOptions: {
 			gestureEnabled: false,
 			headerShown: false,
+			cardStyle: {
+				backgroundColor: 'transparent',
+				opacity: 1,
+			},
 		},
 	},
 )

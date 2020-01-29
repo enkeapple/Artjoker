@@ -41,11 +41,12 @@ class Localize {
 	}
 
 	private defaultLocale(locale: TLocale | undefined) {
-		if (Object.keys(Locales).some((element: string) => element === locale)) {
+		const language = Object.keys(Locales).some((element: string) => element === locale)
+		if (language) {
 			return locale
 		}
 		return Platform.select({
-			android: NativeModules.I18nManager.localeIdentifier,
+			android: language ? NativeModules.I18nManager.localeIdentifier : 'en',
 			ios: NativeModules.SettingsManager ? NativeModules.SettingsManager.settings.AppleLanguages[0] : 'en',
 		}).substring(0, 2)
 	}

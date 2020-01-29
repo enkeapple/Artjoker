@@ -1,23 +1,41 @@
 import React, { Component } from 'react'
 import { View, ViewStyle } from 'react-native'
-import { observer } from 'mobx-react'
 import { Filter, List, SafeAreaView } from 'elements'
-import Application from '../Application'
+import { Users } from 'models'
+import { observer } from 'mobx-react'
 import { observable, toJS } from 'mobx'
+import { ISection } from 'types/Http'
 
 @observer
 class Main extends Component {
-	@observable users = []
+	@observable private _sections: ISection[] = observable([])
+	@observable private _model: Users = new Users()
+
+	get model(): Users {
+		return this._model
+	}
+
 
 	componentDidMount() {
-		Application.instance.fetchData().then((response) => (this.users = response))
+		this.model.fetchUserList().then((response) => {
+			this._sections = response
+		})
+	}
+
+	handleDate = (index: number | null) => {
+		this._sections.map((section: ISection) => {
+			console.log(section.data.filter((element) => Number(element.id) !== Number(index)))
+			section.data = section.data.filter((element) => Number(element.id) !== Number(index))
+			return section
+		})
+		console.log(this._sections, index)
 	}
 
 	render() {
 		return (
 			<View style={layout}>
 				<Filter />
-				<List users={toJS(this.users)} />
+				<List sections={toJS(this._sections)} onDate={this.handleDate} />
 			</View>
 		)
 	}

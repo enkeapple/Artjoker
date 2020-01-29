@@ -3,7 +3,7 @@ export interface IHttpResult {
 	result?: IUser[]
 }
 
-interface IMeta {
+export interface IMeta {
 	success: boolean
 	code: number
 	message: string
@@ -16,6 +16,16 @@ interface IMeta {
 		remaining: number
 		reset: number
 	}
+}
+
+export interface ISection {
+	title: string
+	data: IUser[]
+}
+
+export interface IData {
+	item: IUser
+	index: number
 }
 
 export interface IUser {
@@ -37,6 +47,6 @@ export interface IUser {
 	}
 }
 
-interface ILink {
+export interface ILink {
 	href: string
 }

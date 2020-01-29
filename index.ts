@@ -11,4 +11,9 @@ YellowBox.ignoreWarnings([
 	'Warning:',
 ])
 
+// tslint:disable-next-line: no-console
+console.disableYellowBox = true
+// tslint:disable-next-line: no-console
+console.ignoredYellowBox = ['Warning: ReactNative.createElement']
+
 Application.instance.bootstrap()

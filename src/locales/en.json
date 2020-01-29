@@ -15,6 +15,6 @@
 
     "userAge": "{dob} years old",
 
-    "modalQuestion": "Are you sure you want to invite user id = {id}?",
+    "modalQuestion": "Are you sure you want to invite user id = {question}?",
     "modalSuccess": "Invitation sent"
 }

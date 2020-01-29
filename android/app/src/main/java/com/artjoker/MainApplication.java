@@ -27,7 +27,6 @@ public class MainApplication extends Application implements ReactApplication {
 		protected List<ReactPackage> getPackages() {
 			@SuppressWarnings("UnnecessaryLocalVariable")
 			List<ReactPackage> packages = new PackageList(this).getPackages();
-			packages.add(new RNGestureHandlerPackage());
 			packages.add(new RNScreensPackage());
 			packages.add(new SafeAreaContextPackage());
 			packages.add(new RNCMaskedViewPackage());

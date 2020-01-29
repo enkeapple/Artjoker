@@ -7,7 +7,7 @@ import { observer } from 'mobx-react'
 
 interface IProps {
 	sections: ISection[]
-	onDate: (index: number) => void
+	onDate: (index: number | null) => void
 }
 
 @observer

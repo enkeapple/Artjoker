@@ -4,7 +4,12 @@ import { User, Title } from 'elements'
 import { IUser } from 'types/Http'
 
 interface IProps {
-	users: IUser[]
+	users: ISection[]
+}
+
+interface ISection {
+	title: string
+	data: IUser[]
 }
 
 interface IData {
@@ -22,7 +27,10 @@ export default (props: IProps) => {
 		return <User key={index} {...{ id, first_name, last_name, gender, dob, status }} />
 	}
 
-	const _renderSectionHeader = ({ section: { title } }: { section: { title: string } }) => <Title {...{ title }} />
+	const _renderSectionHeader = ({ section }: any) => {
+		const { index, title } = section
+		return <Title key={index} {...{ title }} />
+	}
 
 	return (
 		<View style={layout}>

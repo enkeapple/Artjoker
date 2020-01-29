@@ -6,8 +6,8 @@
 
     "inputName": "Name",
     "inputGenger": "Gender",
-    "inputAgeFrom": "from",
-    "inputAgeTo": "to",
+    "inputAgeFrom": "From",
+    "inputAgeTo": "To",
 
     "genderMale": "Male",
     "genderFemale": "Female",

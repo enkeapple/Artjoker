@@ -1,8 +1,9 @@
 {
 	"compilerOptions": {
 		"allowSyntheticDefaultImports": true,
-		"baseUrl": "./",
+		"baseUrl": "./src/",
 		"paths": {
+			"constants/*": ["constants/*"],
 			"elements/*": ["elements/*"],
 			"locales/*": ["locales/*"],
 			"models/*": ["models/*"],

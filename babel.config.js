@@ -4,8 +4,9 @@ module.exports = {
 		[
 			'babel-plugin-module-resolver',
 			{
-				root: ['./'],
+				root: ['./src/'],
 				alias: {
+					constants: './src/constants',
 					elements: './src/elements',
 					locales: './src/locales',
 					models: './src/models',

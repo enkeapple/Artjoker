@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, View, Text, ViewStyle, StyleSheet, StyleProp, TextStyle } from 'react-native'
+import { View, Text, ViewStyle, StyleSheet, StyleProp, TextStyle } from 'react-native'
+import Ripple from 'react-native-material-ripple'
 import { Localize } from 'services'
 
 interface IProps {
@@ -16,7 +17,7 @@ export default class User extends Component<IProps> {
 		const { id, first_name, last_name, gender, dob, status } = this.props
 		const disabled = status === 'inactive'
 		return (
-			<TouchableOpacity style={button} {...{ disabled }}>
+			<Ripple style={button} {...{ disabled }}>
 				<View style={layout}>
 					<Text style={[key, name, disabled && inactive]}>#{id}</Text>
 					<Text style={[label, name, disabled && inactive]}>
@@ -25,7 +26,7 @@ export default class User extends Component<IProps> {
 					<Text style={[label, name, disabled && inactive]}>{Localize.translate('userAge', { dob })}</Text>
 					<Text style={[label, name, disabled && inactive]}>{gender}</Text>
 				</View>
-			</TouchableOpacity>
+			</Ripple>
 		)
 	}
 }

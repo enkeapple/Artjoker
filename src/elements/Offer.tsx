@@ -7,17 +7,22 @@ import { observer } from 'mobx-react'
 const { width, height } = Dimensions.get('window')
 
 @observer
-export default class Invite extends Component {
+export default class Offer extends Component {
 	render() {
 		return (
 			<Fragment>
-				<Modal transparent visible={LightBox.invite}>
+				<Modal transparent visible={LightBox.offer}>
 					<View style={layout}>
 						<View style={wrapper}>
-							<Text>{Localize.translate('modalSuccess')}</Text>
-							<Ripple style={button} onPress={LightBox.handleInvite}>
-								<Text>{Localize.translate('btnOK').toUpperCase()}</Text>
-							</Ripple>
+							<Text>{Localize.translate('modalQuestion', { question: LightBox.id })}</Text>
+							<View style={block}>
+								<Ripple style={button} onPress={LightBox.handleInvite}>
+									<Text>{Localize.translate('btnYes').toUpperCase()}</Text>
+								</Ripple>
+								<Ripple style={button} onPress={LightBox.handleOffer}>
+									<Text>{Localize.translate('btnNo').toUpperCase()}</Text>
+								</Ripple>
+							</View>
 						</View>
 					</View>
 				</Modal>
@@ -43,9 +48,13 @@ const wrapper: ViewStyle = {
 	justifyContent: 'center',
 }
 
-const button: ViewStyle = {
+const block: ViewStyle = {
+	flexDirection: 'row',
 	marginTop: 20,
-	width: width - 100,
+}
+
+const button: ViewStyle = {
+	width: (width - 100) / 2,
 	height: 40,
 	borderWidth: StyleSheet.hairlineWidth,
 	borderColor: '#d3d3d3',

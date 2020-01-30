@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import { ViewStyle, SectionList, View } from 'react-native'
-import { User, Title, Question, Invite } from 'elements'
+import { ViewStyle, SectionList, View, ActivityIndicator, Dimensions } from 'react-native'
+import { User, Title } from 'elements'
 import { IUser, IData, ISection } from 'types/Http'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 
+const { width } = Dimensions.get('window')
+
 interface IProps {
 	sections: ISection[]
-	onDate: (index: number | null) => void
 }
 
 @observer
@@ -20,9 +21,7 @@ export default class List extends Component<IProps> {
 
 	renderItem = ({ item, index }: IData) => {
 		const { id, first_name, last_name, gender, dob, status } = item
-		return (
-			<User key={index} {...{ id, first_name, last_name, gender, dob, status }} onPress={this.handleQuestion} />
-		)
+		return <User key={index} {...{ id, first_name, last_name, gender, dob, status }} />
 	}
 
 	renderSectionHeader = ({ section }: any) => {
@@ -30,36 +29,22 @@ export default class List extends Component<IProps> {
 		return data.length ? <Title {...{ title }} /> : null
 	}
 
-	handleModal = () => {
-		this.visible = !this.visible
-	}
-
-	handleQuestion = (index: number | null) => {
-		this.question = index
-	}
-
-	handleInvite = (index: number | null) => {
-		this.invite = index
-	}
-
 	render() {
-		const { sections, onDate } = this.props
+		const { sections } = this.props
 		return (
 			<View style={layout}>
-				<SectionList
-					sections={sections}
-					initialNumToRender={10}
-					keyExtractor={this.keyExtractor}
-					renderItem={this.renderItem}
-					renderSectionHeader={this.renderSectionHeader}
-				/>
-				<Question
-					question={this.question}
-					onQuestion={this.handleQuestion}
-					onInvite={this.handleInvite}
-					onDate={onDate}
-				/>
-				<Invite invite={this.invite} onSuccess={this.handleInvite} />
+				{sections.length ? (
+					<SectionList
+						style={list}
+						sections={sections}
+						initialNumToRender={10}
+						keyExtractor={this.keyExtractor}
+						renderItem={this.renderItem}
+						renderSectionHeader={this.renderSectionHeader}
+					/>
+				) : (
+					<ActivityIndicator size={'large'} />
+				)}
 			</View>
 		)
 	}
@@ -67,4 +52,10 @@ export default class List extends Component<IProps> {
 
 const layout: ViewStyle = {
 	flex: 1,
+	alignItems: 'center',
+	justifyContent: 'center',
+}
+
+const list: ViewStyle = {
+	width,
 }

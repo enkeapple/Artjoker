@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, ViewStyle, StyleSheet, StyleProp, TextStyle } from 'react-native'
 import Ripple from 'react-native-material-ripple'
-import { Localize } from 'services'
+import { Localize, LightBox } from 'models'
 
 interface IProps {
 	id: number
@@ -10,13 +10,12 @@ interface IProps {
 	gender: string
 	dob: string
 	status: string
-	onPress: (index: number) => void
 }
 
 export default class User extends Component<IProps> {
 	handlePress = () => {
 		const { id } = this.props
-		this.props.onPress(id)
+		LightBox.getID(id)
 	}
 
 	render() {

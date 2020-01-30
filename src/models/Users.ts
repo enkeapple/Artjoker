@@ -1,26 +1,33 @@
-import { Http } from 'services'
+import { Http } from 'models'
 import { sortBy } from 'lodash'
 import moment from 'moment'
 import { IUser, IHttpResult, ISection } from 'types/Http'
 import { observable, action } from 'mobx'
 
-export default class Users {
-	private _http: Http = new Http('https://gorest.co.in/public-api/users')
-	private _user: ISection[] = observable([])
+class Users {
+	@observable private _http: Http = new Http('https://gorest.co.in/public-api/users')
+	@observable private _data: ISection[] = observable([])
+
+	get data(): ISection[] {
+		return this._data
+	}
 
 	get http(): Http {
 		return this._http
 	}
 
-	get users(): ISection[] {
-		return this._user
-	}
-
 	@action getUserList(): ISection[] {
-		return this.users
+		return this.data
 	}
 
-	@action fetchUserList(): Promise<any> {
+	@action setUserList(id: number | null) {
+		this._data.map((section: ISection) => {
+			section.data = section.data.filter((element) => Number(element.id) !== Number(id))
+			return section
+		})
+	}
+
+	@action fetchUserList(): Promise<ISection[]> {
 		return this.http
 			.getData()
 			.then(this.fetchSuccess)
@@ -38,11 +45,13 @@ export default class Users {
 			else prev[title].data.push(next)
 			return prev
 		}, {})
-		this._user = sortBy(Object.values(users), ['title'])
-		return this._user
+		this._data = sortBy(Object.values(users), ['title'])
+		return this._data
 	}
 
 	@action.bound fetchError(_error: string) {
-		return this._user
+		return this._data
 	}
 }
+
+export default new Users()

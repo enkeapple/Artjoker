@@ -1,7 +1,7 @@
-import { observable, action, autorun, toJS } from 'mobx'
+import { observable, action, autorun } from 'mobx'
 import Users from './Users'
 import { ISection } from 'types/Http'
-import { cloneDeep, debounce, includes, intersectionBy, filter } from 'lodash'
+import { cloneDeep, debounce, includes } from 'lodash'
 
 class Input {
 	@observable private _users: typeof Users = Users

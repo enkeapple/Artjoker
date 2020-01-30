@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { View, ViewStyle, Text, StyleSheet, Dimensions } from 'react-native'
-import { Localize } from 'services'
+import { Localize, Input } from 'models'
 import Ripple from 'react-native-material-ripple'
 import { list } from 'constants/data'
 import { TextField } from 'react-native-material-textfield'
 import { Dropdown } from 'react-native-material-dropdown'
 import { observer } from 'mobx-react'
-import { observable, action, toJS } from 'mobx'
+import { observable } from 'mobx'
 
 const { width } = Dimensions.get('window')
 const keyboardType = 'number-pad'
@@ -14,65 +14,49 @@ const maxLength = 2
 
 @observer
 export default class Filter extends Component {
-	@observable name: string = ''
-	@observable fromAge: string = ''
-	@observable toAge: string = ''
-	@observable gender: string = ''
-
-	@action handleChangeName = (name: string) => {
-		this.name = name
-	}
-
-	@action handleChangeFromAge = (fromAge: string) => {
-		this.fromAge = fromAge
-	}
-
-	@action handleChangeToAge = (toAge: string) => {
-		this.toAge = toAge
-	}
-
-	@action handleChangeGender = (gender: string) => {
-		this.gender = gender
-	}
-
-	@action handleReset = () => {
-		this.name = ''
-		this.fromAge = ''
-		this.toAge = ''
-		this.gender = ''
+	handleReset = (): void => {
+		this.refs.name.inputRef.current.clear()
+		this.refs.fromAge.inputRef.current.clear()
+		this.refs.toAge.inputRef.current.clear()
+		this.refs.gender.props.value = ''
+		Input.handleReset()
 	}
 
 	render() {
 		return (
 			<View style={layout}>
 				<TextField
+					ref={'name'}
 					inputContainerStyle={field}
 					label={Localize.translate('inputName')}
-					value={toJS(this.name)}
-					onChangeText={this.handleChangeName}
+					value={Input.name}
+					onChangeText={Input.handleChangeName}
 				/>
 				<View style={block}>
 					<TextField
+						ref={'fromAge'}
 						{...{ keyboardType, maxLength }}
 						inputContainerStyle={[field, age]}
 						label={Localize.translate('inputAgeFrom')}
-						value={this.fromAge}
-						onChangeText={this.handleChangeFromAge}
+						value={Input.fromAge}
+						onChangeText={Input.handleChangeFromAge}
 					/>
 					<TextField
+						ref={'toAge'}
 						{...{ keyboardType, maxLength }}
 						inputContainerStyle={[field, age]}
 						label={Localize.translate('inputAgeTo')}
-						value={this.toAge}
-						onChangeText={this.handleChangeToAge}
+						value={Input.toAge}
+						onChangeText={Input.handleChangeToAge}
 					/>
 				</View>
 				<Dropdown
+					ref={'gender'}
 					inputContainerStyle={field}
 					label={Localize.translate('inputGenger')}
-					value={this.gender}
+					value={Input.gender}
 					data={list}
-					onChangeText={this.handleChangeGender}
+					onChangeText={Input.handleChangeGender}
 				/>
 				<Ripple style={button} onPress={this.handleReset}>
 					<Text>{Localize.translate('btnReset').toUpperCase()}</Text>

@@ -8,7 +8,6 @@
 			"locales/*": ["locales/*"],
 			"models/*": ["models/*"],
 			"screens/*": ["screens/*"],
-			"services/*": ["services/*"],
 			"types/*": ["types/*"]
 		},
 		"esModuleInterop": true,

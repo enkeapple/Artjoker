@@ -1,6 +1,6 @@
 import { AppRegistry } from 'react-native'
 import { name as appName } from '../app.json'
-import { Localize } from './services'
+import { Localize } from './models'
 import StackNavigator from './Navigator'
 
 export default class Application {

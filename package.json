@@ -9,7 +9,6 @@
 		"android:apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ../",
 		"android:bundle": "cd android && ./gradlew clean && ./gradlew bundleRelease && cd ../",
 		"android:clean": "cd android && ./gradlew clean && cd ../",
-		"postinstall": "npx react-codemod rename-unsafe-lifecycles",
 		"prettier": "prettier --write './src/**/*.{ts,tsx}'",
 		"watchman": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache verify && npm install && npm start -- --reset-cache",
 		"xcode": "xed -b ios"

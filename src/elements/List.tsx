@@ -31,20 +31,25 @@ export default class List extends Component<IProps> {
 
 	render() {
 		const { sections } = this.props
+
+		if (!sections.length) {
+			return (
+				<View style={layout}>
+					<ActivityIndicator size={'large'} />
+				</View>
+			)
+		}
+
 		return (
 			<View style={layout}>
-				{sections.length ? (
-					<SectionList
-						style={list}
-						sections={sections}
-						initialNumToRender={10}
-						keyExtractor={this.keyExtractor}
-						renderItem={this.renderItem}
-						renderSectionHeader={this.renderSectionHeader}
-					/>
-				) : (
-					<ActivityIndicator size={'large'} />
-				)}
+				<SectionList
+					style={list}
+					sections={sections}
+					initialNumToRender={10}
+					keyExtractor={this.keyExtractor}
+					renderItem={this.renderItem}
+					renderSectionHeader={this.renderSectionHeader}
+				/>
 			</View>
 		)
 	}

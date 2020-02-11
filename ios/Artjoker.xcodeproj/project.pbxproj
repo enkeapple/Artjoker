@@ -11,12 +11,12 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3C6A51E89857F4E3CADF7745 /* libPods-Artjoker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E1F4FCBE6981B7FEA9E755 /* libPods-Artjoker.a */; };
+		E6BFD30FC7D97D38CE4146E4 /* libPods-Artjoker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C60D02DB113719FA86A5BC5 /* libPods-Artjoker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		03E1F4FCBE6981B7FEA9E755 /* libPods-Artjoker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Artjoker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		128C5BBE54DB8E71BCEEAB26 /* Pods-Artjoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artjoker.release.xcconfig"; path = "Target Support Files/Pods-Artjoker/Pods-Artjoker.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Artjoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artjoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Artjoker/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Artjoker/AppDelegate.m; sourceTree = "<group>"; };
@@ -24,10 +24,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Artjoker/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Artjoker/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Artjoker/main.m; sourceTree = "<group>"; };
-		B4099428BE144EC8D647041F /* Pods-Artjoker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artjoker.release.xcconfig"; path = "Target Support Files/Pods-Artjoker/Pods-Artjoker.release.xcconfig"; sourceTree = "<group>"; };
+		2C60D02DB113719FA86A5BC5 /* libPods-Artjoker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Artjoker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C0BEF64D15DB6279EC3A6DE /* Pods-Artjoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artjoker.debug.xcconfig"; path = "Target Support Files/Pods-Artjoker/Pods-Artjoker.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		FF62E2CA4683F713A7C487D8 /* Pods-Artjoker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Artjoker.debug.xcconfig"; path = "Target Support Files/Pods-Artjoker/Pods-Artjoker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C6A51E89857F4E3CADF7745 /* libPods-Artjoker.a in Frameworks */,
+				E6BFD30FC7D97D38CE4146E4 /* libPods-Artjoker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +45,8 @@
 		058FB4C020B8521D816C8A70 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF62E2CA4683F713A7C487D8 /* Pods-Artjoker.debug.xcconfig */,
-				B4099428BE144EC8D647041F /* Pods-Artjoker.release.xcconfig */,
+				6C0BEF64D15DB6279EC3A6DE /* Pods-Artjoker.debug.xcconfig */,
+				128C5BBE54DB8E71BCEEAB26 /* Pods-Artjoker.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -70,7 +70,7 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				03E1F4FCBE6981B7FEA9E755 /* libPods-Artjoker.a */,
+				2C60D02DB113719FA86A5BC5 /* libPods-Artjoker.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,7 +111,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Artjoker" */;
 			buildPhases = (
-				2C37644B738F9B44E4B5FC9C /* [CP] Check Pods Manifest.lock */,
+				A174BCE43729455B2DED5D1B /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -181,7 +181,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		2C37644B738F9B44E4B5FC9C /* [CP] Check Pods Manifest.lock */ = {
+		A174BCE43729455B2DED5D1B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,7 +251,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF62E2CA4683F713A7C487D8 /* Pods-Artjoker.debug.xcconfig */;
+			baseConfigurationReference = 6C0BEF64D15DB6279EC3A6DE /* Pods-Artjoker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -268,13 +268,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Artjoker;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4099428BE144EC8D647041F /* Pods-Artjoker.release.xcconfig */;
+			baseConfigurationReference = 128C5BBE54DB8E71BCEEAB26 /* Pods-Artjoker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -290,6 +291,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Artjoker;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

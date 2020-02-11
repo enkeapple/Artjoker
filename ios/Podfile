@@ -34,12 +34,11 @@ target 'Artjoker' do
     pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
 	pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 	
-	# React-Native libraries
-    pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-    pod 'RNScreens', :path => '../node_modules/react-native-screens'
-	pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
-	pod 'RNCMaskedView', :path => '../node_modules/@react-native-community/masked-view'
-    
+	# # React-Native libraries
+    # pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+    # pod 'RNScreens', :path => '../node_modules/react-native-screens'
+	# pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+	# pod 'RNCMaskedView', :path => '../node_modules/@react-native-community/masked-view'
 	use_native_modules!
 end
 

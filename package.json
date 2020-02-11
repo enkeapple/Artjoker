@@ -6,6 +6,7 @@
 		"start": "npx react-native start --reset-cache",
 		"android": "npx react-native run-android",
 		"ios": "npx react-native run-ios",
+		"postinstall": "npx react-codemod rename-unsafe-lifecycles",
 		"android:apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ../",
 		"android:bundle": "cd android && ./gradlew clean && ./gradlew bundleRelease && cd ../",
 		"android:clean": "cd android && ./gradlew clean && cd ../",

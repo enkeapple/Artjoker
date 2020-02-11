@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import { View, Dimensions, Modal, ViewStyle, Text, StyleSheet } from 'react-native'
-import { Localize, LightBox } from 'models'
+import { LightBox } from 'models'
+import { Localize } from 'services'
 import Ripple from 'react-native-material-ripple'
 import { observer } from 'mobx-react'
 

@@ -11,6 +11,7 @@ module.exports = {
 					locales: './src/locales',
 					models: './src/models',
 					screens: './src/screens',
+					services: './src/services',
 					types: './src/types'
 				},
 			},

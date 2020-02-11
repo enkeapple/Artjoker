@@ -1,4 +1,4 @@
-import { Localize } from 'models'
+import { Localize } from 'services'
 
 export const list = [
 	{ value: Localize.translate('genderMale') },

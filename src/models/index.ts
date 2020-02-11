@@ -1,5 +1,3 @@
 export { default as Users } from './Users'
 export { default as LightBox } from './LightBox'
-export { default as Localize } from './Localize'
-export { default as Http } from './Http'
 export { default as Input } from './Input'

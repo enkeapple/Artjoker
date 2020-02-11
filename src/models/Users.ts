@@ -1,4 +1,4 @@
-import { Http } from 'models'
+import { Http } from 'services'
 import { sortBy, minBy, maxBy } from 'lodash'
 import moment from 'moment'
 import { IUser, IHttpResult, ISection } from 'types/Http'

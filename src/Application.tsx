@@ -1,7 +1,8 @@
+import { enableScreens } from 'react-native-screens'
 import { AppRegistry } from 'react-native'
 import { name as appName } from '../app.json'
-import { Localize } from './models'
-import StackNavigator from './Navigator'
+import { Localize } from './services'
+import Navigator from './Navigator'
 
 export default class Application {
 	private static _instance: Application
@@ -14,7 +15,8 @@ export default class Application {
 	}
 
 	bootstrap(): void {
+		enableScreens()
 		Localize.setLocale()
-		AppRegistry.registerComponent(appName, StackNavigator)
+		AppRegistry.registerComponent(appName, Navigator)
 	}
 }

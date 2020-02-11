@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { View, ViewStyle, Text, StyleSheet, Dimensions } from 'react-native'
-import { Localize, Input } from 'models'
+import { Input } from 'models'
+import { Localize } from 'services'
 import Ripple from 'react-native-material-ripple'
 import { list } from 'constants/data'
 import { TextField } from 'react-native-material-textfield'
 import { Dropdown } from 'react-native-material-dropdown'
 import { observer } from 'mobx-react'
-import { observable } from 'mobx'
 
 const { width } = Dimensions.get('window')
 const keyboardType = 'number-pad'

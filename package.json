@@ -15,6 +15,9 @@
 	},
 	"dependencies": {
 		"@react-native-community/masked-view": "^0.1.6",
+		"@react-navigation/native": "^5.0.1",
+		"@react-navigation/native-stack": "^5.0.1",
+		"@react-navigation/stack": "^5.0.1",
 		"axios": "^0.19.2",
 		"lodash": "^4.17.15",
 		"mobx": "^5.15.4",
@@ -29,9 +32,7 @@
 		"react-native-material-textfield": "^0.16.1",
 		"react-native-reanimated": "^1.7.0",
 		"react-native-safe-area-context": "^0.7.2",
-		"react-native-screens": "^2.0.0-beta.2",
-		"react-navigation": "^4.1.1",
-		"react-navigation-stack": "^2.1.1"
+		"react-native-screens": "^2.0.0-beta.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.8.4",
@@ -41,7 +42,6 @@
 		"@types/react-native": "^0.61.12",
 		"@types/react-native-material-dropdown": "^0.11.3",
 		"@types/react-native-material-textfield": "^0.16.3",
-		"@types/react-navigation": "^3.4.0",
 		"@vovkasm/tslint-config": "^2.0.1",
 		"babel-plugin-module-resolver": "^4.0.0",
 		"metro-react-native-babel-preset": "^0.58.0",

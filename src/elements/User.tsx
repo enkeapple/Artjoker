@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, ViewStyle, StyleSheet, StyleProp, TextStyle } from 'react-native'
 import Ripple from 'react-native-material-ripple'
-import { Localize, LightBox } from 'models'
+import { LightBox } from 'models'
+import { Localize } from 'services'
 
 interface IProps {
 	id: number
